@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/screens/signup.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: "https://acfrjttpkpocbjqbdlsr.supabase.co",
-    anonKey: "sb_publishable_IUKY7Yjk_z7pRyVmE5mHRQ_f_i8Ex3Z",
+    url: "https://ojivsorqguktfkzojave.supabase.co",
+    anonKey: "sb_publishable_aHFrQGJSjuD4eqK6xj8A_A_Oxkbg2aR",
   );
 
-  runApp(MyApp());
+  runApp(const Moaween());
 }
 
-class MyApp {
+class Moaween extends StatelessWidget {
+  const Moaween({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ,
-    );
+    return const MaterialApp(home: SignUp());
   }
 }
 

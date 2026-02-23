@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constants/colors.dart';
+import 'package:flutter_project/extensions/nav.dart';
 import 'package:flutter_project/extensions/screensize.dart';
+import 'package:flutter_project/screens/home.dart';
+import 'package:flutter_project/screens/signup.dart';
 import 'package:flutter_project/service/database.dart';
 import 'package:flutter_project/widgets/text_field.dart';
 
@@ -66,6 +69,7 @@ class _SignInState extends State<SignIn> {
                     hint: "سجل كلمة السر",
                     icon: Icon(Icons.password_outlined),
                     controller: passwordController,
+                    isObscure: true,
                   ),
                   ElevatedButton(
                     onPressed: () async {
@@ -75,8 +79,15 @@ class _SignInState extends State<SignIn> {
                       );
                       emailController.dispose();
                       passwordController.dispose();
+                      context.pushAndDelete(HomePage());
                     },
                     child: Text("سجل دخولك"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      context.push(SignUp());
+                    },
+                    child: Text("ماعندك حساب؟ سجل دخولك"),
                   ),
                 ],
               ),
